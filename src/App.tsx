@@ -4,7 +4,6 @@ import col from "./assets/col_index_2022.json";
 import COLMap from "./COLMap";
 import CountriesList from "./CountriesList";
 import type { Country } from "./types";
-import { calculateCostOfLiving } from "./utils";
 
 const App: Component = () => {
   let netValueInput;

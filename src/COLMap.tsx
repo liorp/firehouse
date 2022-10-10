@@ -21,8 +21,8 @@ const costOfLivingMapValues = (countries: Country[], netWorth = 1000) => {
     }
   > = {};
   for (const country of countries) {
-    let costOfLiving = calculateCostOfLiving(country);
-    let fireNumber = Math.floor((costOfLiving * 12) / 0.04);
+    let costOfLiving = Math.floor(calculateCostOfLiving(country));
+    let fireNumber = Math.floor(costOfLiving / 0.04);
     let fired = canFire(netWorth, costOfLiving);
     calculated[country.Code] = {
       canFire: fired ? "Yes" : "No",
@@ -46,7 +46,7 @@ const COLMap = (props: COLMapProps) => {
       data: {
         data: {
           costOfLiving: {
-            name: "Cost Of Living (2022)",
+            name: "Cost of living per year (2022)",
             format: "{0} USD",
             thousandSeparator: ",",
           },
