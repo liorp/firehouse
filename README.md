@@ -1,6 +1,6 @@
 # FIREPLACE
 
-A neat utility that shows you where you can [FIRE](https://en.wikipedia.org/wiki/FIRE_movement)
+A neat utility that shows you where you can [FIRE](https://en.wikipedia.org/wiki/FIRE_movement)!
 
 # Credits
 
@@ -11,4 +11,6 @@ Favicon was generated using the following graphics from Twitter Twemoji:
 - Graphics Source: https://github.com/twitter/twemoji/blob/master/assets/svg/1f525.svg
 - Graphics License: CC-BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
 
-Data was taken from [numbeo](https://www.numbeo.com/) and [kaggle](https://www.kaggle.com/datasets/ankanhore545/cost-of-living-index-2022)
+Data was taken from [numbeo](https://www.numbeo.com/) and [kaggle](https://www.kaggle.com/datasets/ankanhore545/cost-of-living-index-2022).
+
+Map library is the awesome [svgMap](https://stephanwagner.me/create-world-map-charts-with-svgmap#svgMapDemoGDP)

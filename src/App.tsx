@@ -29,7 +29,7 @@ const App: Component = () => {
       </div>
       <br />
       <COLMap netWorth={netWorth} />
-      <details class="overflow-auto h-1/2 w-1/2 mt-2">
+      <details class="overflow-auto h-1/2 w-2/3 mt-2">
         <summary>List of countries and approximated COL</summary>
         <For each={col}>
           {(country: Country) => (
