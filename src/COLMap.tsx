@@ -1,7 +1,7 @@
 import { Accessor, createEffect, createSignal, onCleanup } from "solid-js";
 import svgMap from "svgmap";
 import "svgmap/dist/svgMap.min.css";
-import { calculateCostOfLiving } from "./utils";
+import { calculateCostOfLiving, canFire } from "./utils";
 import col from "./assets/col_index_2022.json";
 import type { Country } from "./types";
 
@@ -12,14 +12,24 @@ type COLMapProps = {
 const costOfLivingMapValues = (countries: Country[], netWorth = 1000) => {
   const calculated: Record<
     string,
-    { canFire: string; costOfLiving: number; color: string }
+    {
+      canFire: string;
+      costOfLiving: number;
+      color: string;
+      netWorth: number;
+      fireNumber: number;
+    }
   > = {};
   for (const country of countries) {
     let costOfLiving = calculateCostOfLiving(country);
+    let fireNumber = Math.floor((costOfLiving * 12) / 0.04);
+    let fired = canFire(netWorth, costOfLiving);
     calculated[country.Code] = {
-      canFire: netWorth > costOfLiving ? "Yes" : "No",
-      color: netWorth > costOfLiving ? "#00ff00" : "#ff0000",
+      canFire: fired ? "Yes" : "No",
+      color: fired ? "#00ff00" : "#ff0000",
+      netWorth,
       costOfLiving,
+      fireNumber,
     };
   }
   return calculated;
@@ -40,6 +50,16 @@ const COLMap = (props: COLMapProps) => {
             format: "{0} USD",
             thousandSeparator: ",",
           },
+          netWorth: {
+            name: "Your net worth",
+            format: "{0} USD",
+            thousandSeparator: ",",
+          },
+          fireNumber: {
+            name: "🔥FIRE🔥 number",
+            format: "{0} USD",
+            thousandSeparator: ",",
+          },
           canFire: {
             name: "Can you 🔥FIRE🔥 here?",
           },
@@ -49,7 +69,7 @@ const COLMap = (props: COLMapProps) => {
       },
     });
   });
-  return <div id="svgMap" class="w-96 h-96"></div>;
+  return <div id="svgMap" class="w-[70vw]"></div>;
 };
 
 export default COLMap;

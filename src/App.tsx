@@ -6,21 +6,30 @@ import type { Country } from "./types";
 import { calculateCostOfLiving } from "./utils";
 
 const App: Component = () => {
-  const [netWorth, setNetWorth] = createSignal(1000);
+  let netValueInput;
+  const [netWorth, setNetWorth] = createSignal(200000);
 
   return (
     <div class="flex flex-col content-center items-center align-middle pt-2 mx-auto h-full w-full prose lg:prose-xl">
-      <h1 class="">FIREHOUSE</h1>
-      <input
-        type="number"
-        placeholder="Enter your current net worth (USD)"
-        class="input input-bordered input-primary w-full max-w-md"
-        value={netWorth()}
-        onChange={(e) => setNetWorth(e.target.value)}
-      />
+      <h1 class="">🔥FIREHOUSE🔥</h1>
+      <div class="form-control">
+        <label class="label">
+          <span class="label-text">Enter your current net worth (USD)</span>
+        </label>
+        <label class="input-group">
+          <input
+            ref={netValueInput}
+            type="text"
+            class="input input-bordered input-primary w-full max-w-sm"
+            value={netWorth()}
+            onChange={(e) => setNetWorth(e.target.value)}
+          />
+          <span onClick={(e) => setNetWorth(netValueInput.value)}>USD</span>
+        </label>
+      </div>
       <br />
-      <COLMap netWorth={netWorth} key={netWorth()} />
-      <details>
+      <COLMap netWorth={netWorth} />
+      <details class="overflow-auto h-1/2 w-1/2 mt-2">
         <summary>List of countries and approximated COL</summary>
         <For each={col}>
           {(country: Country) => (
@@ -31,6 +40,14 @@ const App: Component = () => {
           )}
         </For>
       </details>
+      <footer>
+        Based on the&nbsp;
+        <a href="https://web.archive.org/web/20110806210437/http://www.aaii.com/journal/article/retirement-savings-choosing-a-withdrawal-rate-that-is-sustainable?utm_source=sitesearch&utm_medium=click">
+          trinity study
+        </a>{" "}
+        &bullet; All calculations are done locally &bullet; &copy; Lior Pollak
+        2022
+      </footer>
     </div>
   );
 };
