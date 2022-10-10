@@ -1,4 +1,4 @@
-# FIREPLACE
+# FIREHOUSE
 
 A neat utility that shows you where you can [FIRE](https://en.wikipedia.org/wiki/FIRE_movement)!
 
