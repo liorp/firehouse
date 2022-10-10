@@ -4,16 +4,93 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#6419E6" />
+
+    <meta property="og:title" content="FIREPLACE" />
+    <meta name="description" content="Find out where you can FIRE!" />
+    <meta property="og:url" content="https://fireplace.liorp.dev/" />
+    <meta property="og:description" content="Find out where you can FIRE!" />
+    <meta property="og:image" content="/icons/favicon.png" />
+    <meta name="theme-color" content="#9266cc" />
+
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+
+    <link rel="icon" href="/icons/favicon.ico" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="shortcut icon"
       type="image/ico"
       href="/src/assets/favicon_io/favicon.ico"
     />
+
+    <script defer type="application/javascript" src="/klaroConfig.js"></script>
+    <script
+      defer
+      data-config="klaroConfig"
+      type="application/javascript"
+      src="https://cdn.kiprotect.com/klaro/v0.7.9/klaro.js"
+    ></script>
+    <script
+      type="text/plain"
+      data-type="application/javascript"
+      data-name="googleAnalytics"
+    >
+      (function loadGA() {
+          var ga = document.createElement('script')
+          ga.type = 'text/javascript'
+          ga.async = true
+          ga.src =
+              ('https:' == document.location.protocol
+                  ? 'https://www'
+                  : 'http://www') +
+              '.googletagmanager.com/gtag/js?id=G-506DZS510Q'
+          var s = document.getElementsByTagName('script')[0]
+          s.parentNode.insertBefore(ga, s)
+          window.dataLayer = window.dataLayer || []
+          function gtag() {
+              dataLayer.push(arguments)
+          }
+          gtag('js', new Date())
+
+          gtag('config', 'G-506DZS510Q')
+      })()
+    </script>
+
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4529248472834919"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.2.3/gh-fork-ribbon.min.css"
+    />
+
     <title>FIREHOUSE</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <a
+      class="github-fork-ribbon"
+      href="https://github.com/liorp/firehouse/"
+      data-ribbon="Fork me on GitHub"
+      title="Fork me on GitHub"
+      >Fork me on GitHub</a
+    >
+
     <script src="/src/index.tsx" type="module"></script>
   </body>
 </html>

@@ -69,7 +69,7 @@ const COLMap = (props: COLMapProps) => {
       },
     });
   });
-  return <div id="svgMap" class="w-[70vw]"></div>;
+  return <div id="svgMap" class="w-[60vw] p-4"></div>;
 };
 
 export default COLMap;
