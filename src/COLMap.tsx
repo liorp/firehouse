@@ -1,4 +1,4 @@
-import { Accessor, createEffect } from "solid-js";
+import { Accessor, createEffect, createSignal, onCleanup } from "solid-js";
 import svgMap from "svgmap";
 import "svgmap/dist/svgMap.min.css";
 import { calculateCostOfLiving } from "./utils";
@@ -26,8 +26,12 @@ const costOfLivingMapValues = (countries: Country[], netWorth = 1000) => {
 };
 
 const COLMap = (props: COLMapProps) => {
+  let map: ReturnType<svgMap>;
   createEffect(() => {
-    new svgMap({
+    map?.container.remove();
+    map?.tooltip.remove();
+
+    map = new svgMap({
       targetElementID: "svgMap",
       data: {
         data: {
