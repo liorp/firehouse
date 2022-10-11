@@ -40,7 +40,11 @@ const App: Component = () => {
         <CountriesList countries={col} netWorth={netWorth} />
         <ins
           class="adsbygoogle"
-          style={{ display: "inline-block", width: "100%" }}
+          style={{
+            display: "inline-block",
+            width: "100%",
+            "max-height": "50%",
+          }}
           data-ad-client="ca-pub-4529248472834919"
           data-ad-slot="7239472098"
           data-ad-format="auto"
