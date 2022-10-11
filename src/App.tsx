@@ -43,7 +43,7 @@ const App: Component = () => {
           style={{
             display: "inline-block",
             width: "100%",
-            "max-height": "50%",
+            "max-height": "10vh",
           }}
           data-ad-client="ca-pub-4529248472834919"
           data-ad-slot="7239472098"
