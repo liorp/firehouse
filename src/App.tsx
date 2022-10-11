@@ -47,7 +47,7 @@ const App: Component = () => {
           data-full-width-responsive
         ></ins>
       </div>
-      <footer class="footer footer-center p-4 bg-base-300 text-base-content absolute bottom-0">
+      <footer class="footer footer-center p-4 bg-base-300 text-base-content fixed bottom-0">
         <div>
           <p>
             Based on the&nbsp;
@@ -57,7 +57,15 @@ const App: Component = () => {
             >
               trinity study
             </a>{" "}
-            &bullet; All calculations are done locally &bullet; &copy;{" "}
+            &bullet; All calculations are done locally &bullet;{" "}
+            <a
+              class="link"
+              href="#"
+              onClick={() => klaro.show(undefined, true)}
+            >
+              Set your analytics preferences
+            </a>{" "}
+            &bullet; &copy;{" "}
             <a class="link" href="https://liorp.dev/">
               Lior Pollak
             </a>{" "}
