@@ -20,7 +20,9 @@ const App: Component = () => {
   return (
     <>
       <div class="flex flex-col content-center items-center align-middle pt-2 mx-auto h-full w-full prose lg:prose-xl">
-        <h1 class="">🔥FIREPLACE🔥</h1>
+        <h1 class="transition transform hover:-rotate-6 !mt-4">
+          🔥FIREPLACE🔥
+        </h1>
         <div class="form-control">
           <label class="label">
             <span class="label-text">Enter your current net worth (USD)</span>
