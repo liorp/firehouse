@@ -14,10 +14,10 @@ const costOfLivingMapValues = (countries: Country[], netWorth = 1000) => {
     string,
     {
       canFire: string;
-      costOfLiving: number;
+      costOfLiving: string;
       color: string;
-      netWorth: number;
-      fireNumber: number;
+      netWorth: string;
+      fireNumber: string;
     }
   > = {};
   for (const country of countries) {
@@ -27,9 +27,9 @@ const costOfLivingMapValues = (countries: Country[], netWorth = 1000) => {
     calculated[country.Code] = {
       canFire: fired ? "Yes" : "No",
       color: fired ? "#00ff00" : "#ff0000",
-      netWorth,
-      costOfLiving,
-      fireNumber,
+      netWorth: Intl.NumberFormat().format(netWorth),
+      costOfLiving: Intl.NumberFormat().format(costOfLiving),
+      fireNumber: Intl.NumberFormat().format(fireNumber),
     };
   }
   return calculated;
@@ -48,17 +48,14 @@ const COLMap = (props: COLMapProps) => {
           costOfLiving: {
             name: "Cost of living per year (2022)",
             format: "{0} USD",
-            thousandSeparator: ",",
           },
           netWorth: {
             name: "Your net worth",
             format: "{0} USD",
-            thousandSeparator: ",",
           },
           fireNumber: {
             name: "🔥FIRE🔥 number",
             format: "{0} USD",
-            thousandSeparator: ",",
           },
           canFire: {
             name: "Can you 🔥FIRE🔥 here?",

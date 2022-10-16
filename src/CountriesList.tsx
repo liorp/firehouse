@@ -32,7 +32,12 @@ const CountriesList = (props: CountriesListProps) => {
                 {(country: Country) => (
                   <tr>
                     <td>{country.Country}&nbsp;</td>
-                    <td>{Math.floor(calculateCostOfLiving(country))} USD</td>
+                    <td>
+                      {Intl.NumberFormat().format(
+                        Math.floor(calculateCostOfLiving(country))
+                      )}{" "}
+                      USD
+                    </td>
                   </tr>
                 )}
               </For>
